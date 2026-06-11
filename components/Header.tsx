@@ -1,6 +1,5 @@
-﻿'use client';
+'use client';
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { SailLogo } from './SailLogo';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -30,16 +29,16 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'glass shadow-lg' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[var(--bg)] border-b border-[var(--border)] ${
+          scrolled ? 'shadow-sm' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-18">
+          <div className="flex items-center justify-between h-16 lg:h-[68px]">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2.5 flex-shrink-0" aria-label="Дос-Кредобанк — на главную">
               <SailLogo size={32} />
-              <span className="font-display font-bold text-sm tracking-widest uppercase text-[var(--text)]">
+              <span className="font-display font-extrabold text-sm tracking-widest uppercase text-[var(--text)]">
                 DOSCREDOBANK
               </span>
             </a>
@@ -50,7 +49,7 @@ export function Header() {
                 <a
                   key={key}
                   href={href}
-                  className="text-sm font-medium text-[var(--muted)] hover:text-[var(--text)] transition-colors"
+                  className="text-sm font-medium text-[var(--muted)] hover:text-brand transition-colors"
                 >
                   {t(key)}
                 </a>
@@ -61,7 +60,7 @@ export function Header() {
             <div className="flex items-center gap-2">
               <a
                 href="tel:8686"
-                className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-400 transition-colors"
+                className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-[var(--text)] hover:text-brand transition-colors"
                 aria-label="Позвонить в колл-центр 8686"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -73,13 +72,13 @@ export function Header() {
               <ThemeToggle />
               <a
                 href="#"
-                className="hidden md:inline-flex items-center px-4 py-2 rounded-full bg-brand hover:bg-brand-600 text-white text-sm font-semibold transition-colors shadow-[0_4px_20px_-4px_rgba(228,0,43,0.5)]"
+                className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-brand hover:bg-brand-600 text-white text-sm font-semibold transition-colors"
               >
                 {t('nav.login')}
               </a>
               {/* Hamburger */}
               <button
-                className="lg:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+                className="lg:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-[var(--surface)] transition-colors"
                 onClick={() => setMenuOpen(true)}
                 aria-label="Открыть меню"
                 aria-expanded={menuOpen}

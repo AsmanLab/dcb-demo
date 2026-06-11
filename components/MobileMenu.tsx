@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SailLogo } from './SailLogo';
@@ -39,7 +39,7 @@ export function MobileMenu({ open, onClose, navItems }: MobileMenuProps) {
             <button
               onClick={onClose}
               aria-label="Закрыть меню"
-              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-[var(--surface)] transition-colors"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18"/>
@@ -82,7 +82,7 @@ export function MobileMenu({ open, onClose, navItems }: MobileMenuProps) {
               href="tel:8686"
               className="block w-full text-center py-3 rounded-full border border-[var(--border)] text-[var(--text)] font-semibold hover:bg-[var(--surface)] transition-colors"
             >
-              📞 8686
+              8686
             </a>
           </div>
         </motion.div>

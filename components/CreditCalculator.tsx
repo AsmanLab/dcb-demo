@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedNumber } from './AnimatedNumber';
@@ -33,7 +33,7 @@ export function CreditCalculator() {
   };
 
   return (
-    <Section id="credit" className="py-20 bg-[var(--surface)]">
+    <Section id="credit" className="py-14 sm:py-20 bg-[var(--surface)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -42,7 +42,7 @@ export function CreditCalculator() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[var(--text)] mb-3">
+          <h2 className="font-display text-[1.9rem] sm:text-[2.4rem] font-extrabold text-[var(--text)] mb-3">
             {t('calc.title')}
           </h2>
           <p className="text-[var(--muted)] text-lg">{t('calc.subtitle')}</p>
@@ -132,37 +132,34 @@ export function CreditCalculator() {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-5"
           >
-            {/* Monthly payment — highlighted */}
             <div className="bg-[var(--bg)] rounded-3xl p-6 border border-[var(--border)] flex-1 flex flex-col justify-center">
-              <p className="text-sm text-[var(--muted)] mb-1">{t('calc.monthly')}</p>
+              <p className="text-sm font-medium text-[var(--muted)] mb-1">{t('calc.monthly')}</p>
               <p className="font-display text-4xl font-extrabold text-[var(--text)]">
                 <AnimatedNumber value={monthly} formatter={fmtSom} /> <span className="text-xl text-[var(--muted)]">{t('calc.som')}</span>
               </p>
 
-              {/* Bar */}
               <div className="mt-4 mb-4">
                 <div className="h-2 rounded-full bg-[var(--surface)] overflow-hidden">
                   <motion.div
-                    className="h-full rounded-full"
-                    style={{ background: 'linear-gradient(90deg, #FF3355, #E4002B)' }}
+                    className="h-full rounded-full bg-brand"
                     animate={{ width: `${paidPct}%` }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                   />
                 </div>
-                <div className="flex justify-between text-xs text-[var(--muted)] mt-1">
+                <div className="flex justify-between text-xs text-[var(--muted)] mt-1.5">
                   <span>Основной долг {paidPct.toFixed(0)}%</span>
                   <span>Проценты {(100 - paidPct).toFixed(0)}%</span>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
+                <div className="p-3 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
                   <p className="text-xs text-[var(--muted)] mb-0.5">{t('calc.overpay')}</p>
                   <p className="font-semibold text-[var(--text)] text-sm">
                     <AnimatedNumber value={overpay} formatter={fmtSom} /> {t('calc.som')}
                   </p>
                 </div>
-                <div className="p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
+                <div className="p-3 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">
                   <p className="text-xs text-[var(--muted)] mb-0.5">{t('calc.total')}</p>
                   <p className="font-semibold text-[var(--text)] text-sm">
                     <AnimatedNumber value={total} formatter={fmtSom} /> {t('calc.som')}
@@ -173,7 +170,7 @@ export function CreditCalculator() {
 
             <button
               onClick={handleApply}
-              className="w-full py-4 rounded-2xl bg-brand hover:bg-brand-600 text-white font-semibold text-base transition-all shadow-[0_10px_40px_-10px_rgba(228,0,43,0.5)] hover:shadow-[0_10px_40px_-4px_rgba(228,0,43,0.6)] hover:-translate-y-0.5"
+              className="w-full py-4 rounded-full bg-brand hover:bg-brand-600 text-white font-semibold text-base transition-colors"
               aria-label={t('calc.apply')}
             >
               {t('calc.apply')}
@@ -182,7 +179,6 @@ export function CreditCalculator() {
         </div>
       </div>
 
-      {/* Toast */}
       <AnimatePresence>
         {showToast && (
           <motion.div
@@ -191,7 +187,7 @@ export function CreditCalculator() {
             exit={{ opacity: 0, y: 40, scale: 0.9 }}
             role="status"
             aria-live="polite"
-            className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-emerald-500 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm"
+            className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-emerald-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm"
           >
             {t('toast.success')}
           </motion.div>

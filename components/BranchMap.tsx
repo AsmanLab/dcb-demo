@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from './Section';
@@ -26,7 +26,7 @@ export function BranchMap() {
   ];
 
   return (
-    <Section id="map" className="py-20 bg-[var(--bg)]">
+    <Section id="map" className="py-14 sm:py-20 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -35,7 +35,7 @@ export function BranchMap() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[var(--text)] mb-3">
+          <h2 className="font-display text-[1.9rem] sm:text-[2.4rem] font-extrabold text-[var(--text)] mb-3">
             {t('map.title')}
           </h2>
           <p className="text-[var(--muted)] text-lg">{t('map.subtitle')}</p>
@@ -48,10 +48,10 @@ export function BranchMap() {
               key={id}
               onClick={() => setFilter(id)}
               aria-pressed={filter === id}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
                 filter === id
-                  ? 'bg-brand text-white shadow-[0_4px_12px_-4px_rgba(228,0,43,0.5)]'
-                  : 'bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] hover:border-brand/40'
+                  ? 'bg-brand text-white'
+                  : 'bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] hover:text-[var(--text)]'
               }`}
             >
               {labelKey}
@@ -60,10 +60,10 @@ export function BranchMap() {
           <button
             onClick={() => setShow247(!show247)}
             aria-pressed={show247}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
               show247
-                ? 'bg-emerald-600 text-white'
-                : 'bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] hover:border-emerald-500/40'
+                ? 'bg-emerald-700 text-white'
+                : 'bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] hover:text-[var(--text)]'
             }`}
           >
             {t('map.filter.247')}
@@ -71,15 +71,13 @@ export function BranchMap() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Stylized map panel */}
+          {/* Map panel */}
           <div className="lg:col-span-2 rounded-3xl bg-[var(--surface)] border border-[var(--border)] overflow-hidden relative min-h-72">
-            {/* SVG map of Kyrgyzstan stylized */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none" aria-hidden="true">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none" aria-hidden="true">
               <svg viewBox="0 0 500 300" className="w-full h-full">
                 <path d="M50 150 C80 80 180 40 280 60 C360 75 430 110 470 150 C440 200 350 240 250 250 C150 260 60 230 50 150Z" fill="currentColor" className="text-brand" />
               </svg>
             </div>
-            {/* Location dots */}
             {[
               { x: '45%', y: '45%', label: 'Бишкек' },
               { x: '35%', y: '55%', label: 'Ош' },
@@ -92,14 +90,13 @@ export function BranchMap() {
                 style={{ left: x, top: y, transform: 'translate(-50%, -50%)' }}
               >
                 <div className="relative">
-                  <div className="w-3 h-3 rounded-full bg-brand shadow-[0_0_8px_2px_rgba(228,0,43,0.5)]" />
+                  <div className="w-3 h-3 rounded-full bg-brand" />
                   <span className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-[var(--text)] whitespace-nowrap bg-[var(--surface)] px-1.5 py-0.5 rounded">
                     {label}
                   </span>
                 </div>
               </div>
             ))}
-
             <p className="absolute bottom-4 right-4 text-xs text-[var(--muted)]">{t('map.note')}</p>
           </div>
 
@@ -115,13 +112,15 @@ export function BranchMap() {
               >
                 <div className="flex items-start gap-2">
                   <span className="text-brand mt-0.5" aria-hidden="true">
-                    {loc.type === 'atm' ? '🏧' : loc.type === 'exchange' ? '💱' : '🏦'}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
                   </span>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-[var(--text)] truncate">{loc.name}</p>
                     <p className="text-xs text-[var(--muted)]">{loc.address}</p>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className={`text-xs font-medium ${loc.is247 ? 'text-emerald-400' : 'text-[var(--muted)]'}`}>
+                      <span className={`text-xs font-medium ${loc.is247 ? 'text-emerald-700' : 'text-[var(--muted)]'}`}>
                         {loc.hours}
                       </span>
                       {loc.phone && (

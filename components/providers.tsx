@@ -12,11 +12,11 @@ const ThemeContext = createContext<ThemeCtx>({ theme: 'dark', toggle: () => {} }
 export function useTheme() { return useContext(ThemeContext); }
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     const saved = localStorage.getItem('dcb-theme') as Theme | null;
-    const initial = saved === 'light' ? 'light' : 'dark';
+    const initial = saved === 'dark' ? 'dark' : 'light';
     setTheme(initial);
     document.documentElement.classList.toggle('dark', initial === 'dark');
   }, []);
