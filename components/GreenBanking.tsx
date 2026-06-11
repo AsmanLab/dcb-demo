@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Section } from './Section';
 import { useT } from './providers';
+import { GREEN_PARTNERS } from '@/lib/data';
 import type { DictKey } from '@/lib/i18n';
 
 const ecoItems: { key: DictKey; rate: string }[] = [
@@ -81,6 +82,26 @@ export function GreenBanking() {
             </a>
           </motion.div>
         </div>
+
+        {/* Partner strip */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-14"
+        >
+          <p className="text-center text-xs font-semibold text-[var(--muted)] uppercase tracking-widest mb-5">
+            {t('green.partners')}
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            {GREEN_PARTNERS.map((name) => (
+              <span key={name} className="text-sm font-bold text-[var(--muted)]/70 whitespace-nowrap">
+                {name}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </Section>
   );

@@ -5,8 +5,11 @@ import { Hero } from '@/components/Hero';
 import { CurrencyTicker } from '@/components/CurrencyTicker';
 import { TrustBar } from '@/components/TrustBar';
 import { Products } from '@/components/Products';
+import { Promos } from '@/components/Promos';
 import { CreditCalculator } from '@/components/CreditCalculator';
 import { Deposits } from '@/components/Deposits';
+import { News } from '@/components/News';
+import { FAQ } from '@/components/FAQ';
 import { AISection } from '@/components/AISection';
 import { GreenBanking } from '@/components/GreenBanking';
 import { AppShowcase } from '@/components/AppShowcase';
@@ -27,13 +30,16 @@ export default function Home() {
       <Hero onOpenChat={openChat} />
       <CurrencyTicker />
       <TrustBar />
+      <Promos />
       <Products />
       <CreditCalculator />
       <Deposits />
+      <FAQ />
       <AISection onOpenChat={openChat} />
       <GreenBanking />
       <AppShowcase />
       <BranchMap />
+      <News />
       <CTABand />
       <Footer />
     </main>
