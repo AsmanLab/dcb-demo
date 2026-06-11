@@ -1,21 +1,49 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { SailLogo } from './SailLogo';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileMenu } from './MobileMenu';
+import { MegaMenu } from './MegaMenu';
+import { megaMenu } from '@/lib/megamenu';
 import { useT } from './providers';
+import type { DictKey } from '@/lib/i18n';
 
 export function Header() {
   const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<DictKey | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMenu = useCallback((key: DictKey) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setActiveMenu(megaMenu[key] ? key : null);
+  }, []);
+
+  const scheduleClose = useCallback(() => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setActiveMenu(null), 120);
+  }, []);
+
+  const cancelClose = useCallback(() => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  }, []);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
+
+  useEffect(() => {
+    if (!activeMenu) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveMenu(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [activeMenu]);
 
   const navItems = [
     { key: 'nav.credits' as const, href: '#products' },
@@ -49,7 +77,14 @@ export function Header() {
                 <a
                   key={key}
                   href={href}
-                  className="text-sm font-medium text-[var(--muted)] hover:text-brand transition-colors"
+                  onMouseEnter={() => openMenu(key)}
+                  onMouseLeave={scheduleClose}
+                  onFocus={() => openMenu(key)}
+                  aria-haspopup={megaMenu[key] ? 'true' : undefined}
+                  aria-expanded={megaMenu[key] ? activeMenu === key : undefined}
+                  className={`text-sm font-medium transition-colors ${
+                    activeMenu === key ? 'text-brand' : 'text-[var(--muted)] hover:text-brand'
+                  }`}
                 >
                   {t(key)}
                 </a>
@@ -92,6 +127,13 @@ export function Header() {
             </div>
           </div>
         </div>
+
+        <MegaMenu
+          active={activeMenu}
+          onMouseEnter={cancelClose}
+          onMouseLeave={scheduleClose}
+          onClose={() => setActiveMenu(null)}
+        />
       </header>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} navItems={navItems} />

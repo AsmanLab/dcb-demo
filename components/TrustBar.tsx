@@ -43,6 +43,14 @@ const stats = [
       </svg>
     ),
   },
+  {
+    key: 'trust.cassa' as const,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><path d="M7 15h4"/>
+      </svg>
+    ),
+  },
 ] as const;
 
 export function TrustBar() {
@@ -51,7 +59,7 @@ export function TrustBar() {
   return (
     <section className="py-10 bg-[var(--surface)]" aria-label="Ключевые показатели">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
           {stats.map(({ key, icon }) => (
             <div
               key={key}

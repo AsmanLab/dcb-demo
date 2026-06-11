@@ -57,15 +57,15 @@ export const dict = {
   // Deposits
   'deposits.title': { ru: 'Депозиты', kg: 'Аманаттар', en: 'Deposits' },
   'deposits.subtitle': { ru: 'Выгодно сохраняйте и приумножайте', kg: 'Тиімдүү сактап, көбөйтүңүз', en: 'Save and grow your money profitably' },
-  'deposits.baybol.name': { ru: '«БайБол+»', kg: '«БайБол+»', en: '"BayBol+"' },
-  'deposits.baybol.rate': { ru: '14% годовых', kg: 'жылдык 14%', en: '14% per annum' },
-  'deposits.baybol.desc': { ru: 'Максимальная доходность. Срок от 12 месяцев. Капитализация процентов.', kg: 'Максималдуу киреше. Мөөнөт 12 айдан. Пайыздарды капиталдаштыруу.', en: 'Maximum yield. Term from 12 months. Interest capitalization.' },
-  'deposits.baybols.name': { ru: '«Бай-Бол»', kg: '«Бай-Бол»', en: '"Bay-Bol"' },
-  'deposits.baybols.rate': { ru: 'до 12% годовых', kg: 'жылдык 12%га чейин', en: 'up to 12% p.a.' },
-  'deposits.baybols.desc': { ru: 'Гибкие условия, досрочное снятие без штрафов.', kg: 'Ийкемдүү шарттар, айыпсыз мөөнөтүнөн мурда алуу.', en: 'Flexible terms, early withdrawal without penalties.' },
-  'deposits.green.name': { ru: 'Зелёный депозит', kg: 'Жашыл аманат', en: 'Green Deposit' },
-  'deposits.green.rate': { ru: 'до 10% годовых', kg: 'жылдык 10%га чейин', en: 'up to 10% p.a.' },
-  'deposits.green.desc': { ru: 'Ваши средства финансируют экопроекты Кыргызстана.', kg: 'Сиздин каражатыңыз Кыргызстандын экопроекттерин каржылайт.', en: 'Your funds finance eco-projects in Kyrgyzstan.' },
+  'deposits.baybol.name': { ru: '«Бай Бол»', kg: '«Бай Бол»', en: '"Bai Bol"' },
+  'deposits.baybol.rate': { ru: 'до 14%', kg: '14%га чейин', en: 'up to 14%' },
+  'deposits.baybol.desc': { ru: 'Повышенная ставка 14% на срок 11 месяцев. Ежемесячная капитализация процентов. Акция до 31.07.2026.', kg: '11 айга жогорулатылган 14% ставка. Пайыздардын ай сайын капитализациясы. Акция 31.07.2026га чейин.', en: 'Boosted 14% rate for an 11-month term. Monthly interest capitalization. Promo until 31.07.2026.' },
+  'deposits.baybols.name': { ru: '«Бай Бол +»', kg: '«Бай Бол +»', en: '"Bai Bol +"' },
+  'deposits.baybols.rate': { ru: 'до 13%', kg: '13%га чейин', en: 'up to 13%' },
+  'deposits.baybols.desc': { ru: 'Накопительный вклад с пополнением до 500 000 сом в месяц.', kg: 'Айына 500 000 сомго чейин толуктоо менен топтоочу аманат.', en: 'Savings deposit with top-ups of up to 500,000 KGS per month.' },
+  'deposits.green.name': { ru: '«Жашыл аманат»', kg: '«Жашыл аманат»', en: '"Zhashyl Amanat"' },
+  'deposits.green.rate': { ru: 'до 10%', kg: '10%га чейин', en: 'up to 10%' },
+  'deposits.green.desc': { ru: 'Зелёный депозит — ваши средства финансируют экопроекты Кыргызстана. Доступен и для юридических лиц.', kg: 'Жашыл аманат — каражатыңыз Кыргызстандын экопроекттерин каржылайт. Юридикалык жактар үчүн да жеткиликтүү.', en: 'Green deposit — your funds finance eco-projects in Kyrgyzstan. Also available for legal entities.' },
   'deposits.open': { ru: 'Открыть депозит', kg: 'Аманат ачуу', en: 'Open Deposit' },
 
   // AI section
@@ -98,12 +98,17 @@ export const dict = {
 
   // Map
   'map.title': { ru: 'Отделения и банкоматы', kg: 'Бөлүмдөр жана банкоматтар', en: 'Branches and ATMs' },
-  'map.subtitle': { ru: '100+ точек по всему Кыргызстану', kg: 'Бүткүл Кыргызстан боюнча 100+ пункт', en: '100+ locations across Kyrgyzstan' },
+  'map.subtitle': { ru: 'Филиалы и сберкассы по всему Кыргызстану', kg: 'Бүткүл Кыргызстан боюнча филиалдар жана аманат кассалары', en: 'Branches and savings offices across Kyrgyzstan' },
   'map.filter.branches': { ru: 'Отделения', kg: 'Бөлүмдөр', en: 'Branches' },
   'map.filter.atm': { ru: 'Банкоматы', kg: 'Банкоматтар', en: 'ATMs' },
   'map.filter.exchange': { ru: 'Обмен валют', kg: 'Валюта алмашуу', en: 'Exchange' },
   'map.filter.247': { ru: '24/7', kg: '24/7', en: '24/7' },
   'map.note': { ru: 'В продакшн-версии — интерактивная карта Google Maps', kg: 'Продакшн версиясында — интерактивдүү Google Maps картасы', en: 'In production — interactive Google Maps' },
+  'map.filter.all': { ru: 'Все', kg: 'Баары', en: 'All' },
+  'map.filter.filials': { ru: 'Филиалы', kg: 'Филиалдар', en: 'Branches' },
+  'map.filter.sber': { ru: 'Сберкассы', kg: 'Аманат кассалары', en: 'Savings Offices' },
+  'map.allRegions': { ru: 'Все регионы', kg: 'Бардык аймактар', en: 'All regions' },
+  'map.found': { ru: 'Найдено', kg: 'Табылды', en: 'Found' },
 
   // CTA
   'cta.title': { ru: 'Откройте продукт онлайн\nза 15 минут', kg: 'Продуктуну онлайн\n15 мүнөттө ачыңыз', en: 'Open a product online\nin 15 minutes' },
@@ -134,6 +139,62 @@ export const dict = {
 
   // Toast
   'toast.success': { ru: 'Заявка отправлена! Мы свяжемся с вами в течение 24 часов.', kg: 'Арыз жөнөтүлдү! Биз сиз менен 24 саат ичинде байланышабыз.', en: 'Application submitted! We will contact you within 24 hours.' },
+
+  // Loans (rate ladder)
+  'loans.ladder.title': { ru: 'Ставки потребительского кредита', kg: 'Керектөө насыясынын ставкалары', en: 'Consumer Loan Rates' },
+  'loans.ladder.amount': { ru: 'Сумма, сом', kg: 'Сумма, сом', en: 'Amount, KGS' },
+  'loans.ladder.rate': { ru: 'Ставка', kg: 'Ставка', en: 'Rate' },
+  'loans.ladder.term': { ru: 'Срок, мес.', kg: 'Мөөнөт, ай', en: 'Term, mo.' },
+  'loans.note': { ru: 'Аннуитетные платежи · сом или USD · решение до 5 рабочих дней', kg: 'Аннуитеттик төлөмдөр · сом же USD · чечим 5 жумуш күнүнө чейин', en: 'Annuity payments · KGS or USD · decision within 5 business days' },
+
+  // Cards
+  'cards.fee': { ru: 'Выпуск и обслуживание', kg: 'Чыгаруу жана тейлөө', en: 'Issuance & maintenance' },
+  'cards.validity': { ru: 'Срок действия', kg: 'Жарактуулук мөөнөтү', en: 'Validity' },
+  'cards.issuance': { ru: 'Изготовление 7–14 рабочих дней', kg: 'Даярдоо 7–14 жумуш күнү', en: 'Production 7–14 business days' },
+
+  // Transfers
+  'transfers.systems': { ru: 'Системы денежных переводов', kg: 'Акча которуу системалары', en: 'Money Transfer Systems' },
+  'transfers.coverage': { ru: 'География', kg: 'География', en: 'Coverage' },
+  'transfers.wechat': { ru: 'Переводы в Китай на кошелёк WeChat', kg: 'Кытайга WeChat капчыгына которуулар', en: 'Transfers to China via WeChat wallet' },
+
+  // Deposits extra
+  'deposits.table.title': { ru: 'Ставки «Бай Бол» в сомах', kg: '«Бай Бол» сом менен ставкалары', en: '"Bai Bol" rates in KGS' },
+  'deposits.table.term': { ru: 'Срок, мес.', kg: 'Мөөнөт, ай', en: 'Term, mo.' },
+  'deposits.table.rate': { ru: 'Ставка годовых', kg: 'Жылдык ставка', en: 'Annual rate' },
+  'deposits.table.note': { ru: 'Акция до 31.07.2026 · капитализация ежемесячно', kg: 'Акция 31.07.2026га чейин · ай сайын капитализация', en: 'Promo until 31.07.2026 · monthly capitalization' },
+  'deposits.min': { ru: 'Минимальный взнос', kg: 'Минималдуу салым', en: 'Minimum deposit' },
+  'deposits.insurance': { ru: 'Вклады застрахованы до 1 000 000 сом — Агентство по защите депозитов КР', kg: 'Аманаттар 1 000 000 сомго чейин камсыздандырылган — КР Депозиттерди коргоо агенттиги', en: 'Deposits insured up to 1,000,000 KGS — Deposit Protection Agency of the KR' },
+
+  // Promos
+  'promos.title': { ru: 'Специальные предложения', kg: 'Атайын сунуштар', en: 'Special Offers' },
+  'promos.subtitle': { ru: 'Актуальные акции банка', kg: 'Банктын учурдагы акциялары', en: 'Current bank promotions' },
+
+  // News
+  'news.title': { ru: 'Новости', kg: 'Жаңылыктар', en: 'News' },
+  'news.all': { ru: 'Смотреть все', kg: 'Баарын көрүү', en: 'View all' },
+
+  // FAQ (DCB Гид)
+  'faq.title': { ru: 'DCB Гид — вопросы и ответы', kg: 'DCB Гид — суроо-жооптор', en: 'DCB Guide — Q&A' },
+  'faq.subtitle': { ru: 'Популярные вопросы о кредитах и депозитах', kg: 'Насыялар жана аманаттар боюнча популярдуу суроолор', en: 'Popular questions about loans and deposits' },
+
+  // Green extra
+  'green.partners': { ru: 'Партнёры DCB Green', kg: 'DCB Green өнөктөштөрү', en: 'DCB Green Partners' },
+
+  // Trust bar extra
+  'trust.cassa': { ru: 'Сберкассы 24/7', kg: 'Аманат кассалары 24/7', en: '24/7 Savings Offices' },
+
+  // Footer (real structure)
+  'footer.clients': { ru: 'Клиентам', kg: 'Кардарларга', en: 'For Clients' },
+  'footer.feedback': { ru: 'Обратная связь', kg: 'Кайтарым байланыш', en: 'Feedback' },
+  'footer.tariffs': { ru: 'Тарифы', kg: 'Тарифтер', en: 'Tariffs' },
+  'footer.requisites': { ru: 'Реквизиты', kg: 'Реквизиттер', en: 'Requisites' },
+  'footer.security': { ru: 'Правила безопасности', kg: 'Коопсуздук эрежелери', en: 'Security Rules' },
+  'footer.guarantees': { ru: 'Банковские гарантии', kg: 'Банктык кепилдиктер', en: 'Bank Guarantees' },
+  'footer.literacy': { ru: 'Финансовая грамотность', kg: 'Финансылык сабаттуулук', en: 'Financial Literacy' },
+  'footer.awards': { ru: 'Награды и достижения', kg: 'Сыйлыктар жана жетишкендиктер', en: 'Awards' },
+  'footer.reports': { ru: 'Финансовая отчётность', kg: 'Финансылык отчёттуулук', en: 'Financial Reports' },
+  'footer.management': { ru: 'Руководство', kg: 'Жетекчилик', en: 'Management' },
+  'footer.quality': { ru: 'Оценка качества обслуживания', kg: 'Тейлөө сапатын баалоо', en: 'Service Quality Assessment' },
 } as const;
 
 export type DictKey = keyof typeof dict;
