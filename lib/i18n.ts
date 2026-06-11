@@ -98,12 +98,17 @@ export const dict = {
 
   // Map
   'map.title': { ru: 'Отделения и банкоматы', kg: 'Бөлүмдөр жана банкоматтар', en: 'Branches and ATMs' },
-  'map.subtitle': { ru: '100+ точек по всему Кыргызстану', kg: 'Бүткүл Кыргызстан боюнча 100+ пункт', en: '100+ locations across Kyrgyzstan' },
+  'map.subtitle': { ru: 'Филиалы и сберкассы по всему Кыргызстану', kg: 'Бүткүл Кыргызстан боюнча филиалдар жана аманат кассалары', en: 'Branches and savings offices across Kyrgyzstan' },
   'map.filter.branches': { ru: 'Отделения', kg: 'Бөлүмдөр', en: 'Branches' },
   'map.filter.atm': { ru: 'Банкоматы', kg: 'Банкоматтар', en: 'ATMs' },
   'map.filter.exchange': { ru: 'Обмен валют', kg: 'Валюта алмашуу', en: 'Exchange' },
   'map.filter.247': { ru: '24/7', kg: '24/7', en: '24/7' },
   'map.note': { ru: 'В продакшн-версии — интерактивная карта Google Maps', kg: 'Продакшн версиясында — интерактивдүү Google Maps картасы', en: 'In production — interactive Google Maps' },
+  'map.filter.all': { ru: 'Все', kg: 'Баары', en: 'All' },
+  'map.filter.filials': { ru: 'Филиалы', kg: 'Филиалдар', en: 'Branches' },
+  'map.filter.sber': { ru: 'Сберкассы', kg: 'Аманат кассалары', en: 'Savings Offices' },
+  'map.allRegions': { ru: 'Все регионы', kg: 'Бардык аймактар', en: 'All regions' },
+  'map.found': { ru: 'Найдено', kg: 'Табылды', en: 'Found' },
 
   // CTA
   'cta.title': { ru: 'Откройте продукт онлайн\nза 15 минут', kg: 'Продуктуну онлайн\n15 мүнөттө ачыңыз', en: 'Open a product online\nin 15 minutes' },
