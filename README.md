@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Дос-Кредобанк — демо корпоративного сайта
 
-## Getting Started
+Демо-редизайн сайта **ОАО «Дос-Кредобанк» (dcb.kg)**, подготовленный **APRD Agency** для презентации проекта.
+Это **дизайн-прототип** (данные захардкожены, без реальных банковских API) — цель показать уровень и возможности.
 
-First, run the development server:
+🔗 **Live:** https://dcb-demo.vercel.app
 
+## Возможности
+- Mobile-first, фирменный красный + тёмная тема, светлая/тёмная тема
+- 3 языка: **RU / KG / EN**
+- Рабочий кредитный калькулятор (аннуитетная формула, анимация)
+- AI-консультант (скриптовый движок, 3 языка) с fallback на оператора 8686
+- Лента курсов валют, продукты, зелёный банкинг, показ приложения DCB 360, карта отделений
+- Анимации Framer Motion, доступность (a11y), prefers-reduced-motion
+
+## Стек
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion 12
+
+## Запуск
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # продакшн-сборка
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Деплой
+Vercel (production): `npx vercel --prod`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Структура
+- `app/` — layout, страница, глобальные стили (Tailwind v4 `@theme`)
+- `components/` — секции и UI (Header, Hero, CreditCalculator, ChatWidget, …)
+- `lib/` — `i18n.ts` (словарь RU/KG/EN), `chat.ts` (движок чата), `data.ts` (курсы/отделения)
+- `BUILD-SPEC.md` — техническая спецификация демо
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© ОАО «Дос-Кредобанк» — демо-версия. Разработка: [APRD Agency](https://aprd.kg).
