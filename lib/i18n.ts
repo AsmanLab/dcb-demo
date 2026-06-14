@@ -147,6 +147,20 @@ export const dict = {
   // Toast
   'toast.success': { ru: 'Заявка отправлена! Мы свяжемся с вами в течение 24 часов.', kg: 'Арыз жөнөтүлдү! Биз сиз менен 24 саат ичинде байланышабыз.', en: 'Application submitted! We will contact you within 24 hours.' },
 
+  // Application form
+  'apply.title': { ru: 'Оформить заявку', kg: 'Арыз берүү', en: 'Apply Now' },
+  'apply.subtitle': { ru: 'Оставьте контакты — перезвоним в течение 24 часов', kg: 'Байланыш калтырыңыз — 24 саат ичинде чалабыз', en: 'Leave your details — we will call back within 24 hours' },
+  'apply.product': { ru: 'Продукт', kg: 'Продукт', en: 'Product' },
+  'apply.name': { ru: 'Ваше имя', kg: 'Атыңыз', en: 'Your name' },
+  'apply.namePh': { ru: 'Например, Айбек', kg: 'Мисалы, Айбек', en: 'e.g. Aibek' },
+  'apply.phone': { ru: 'Телефон', kg: 'Телефон', en: 'Phone' },
+  'apply.submit': { ru: 'Отправить заявку', kg: 'Арызды жөнөтүү', en: 'Submit application' },
+  'apply.errName': { ru: 'Введите имя', kg: 'Атыңызды жазыңыз', en: 'Enter your name' },
+  'apply.errPhone': { ru: 'Введите корректный номер', kg: 'Туура номер жазыңыз', en: 'Enter a valid number' },
+  'apply.successTitle': { ru: 'Заявка принята!', kg: 'Арыз кабыл алынды!', en: 'Application received!' },
+  'apply.close': { ru: 'Закрыть', kg: 'Жабуу', en: 'Close' },
+  'apply.agree': { ru: 'Нажимая кнопку, вы соглашаетесь на обработку персональных данных', kg: 'Баскычты басуу менен жеке маалыматтарды иштетүүгө макул болосуз', en: 'By submitting, you agree to the processing of personal data' },
+
   // Loans (rate ladder)
   'loans.ladder.title': { ru: 'Ставки потребительского кредита', kg: 'Керектөө насыясынын ставкалары', en: 'Consumer Loan Rates' },
   'loans.ladder.amount': { ru: 'Сумма, сом', kg: 'Сумма, сом', en: 'Amount, KGS' },

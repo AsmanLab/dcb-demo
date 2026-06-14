@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Section } from './Section';
 import { useT } from './providers';
 import { BAYBOL_RATE_TABLE, DEPOSIT_MIN_AMOUNTS } from '@/lib/data';
+import { openApplication } from '@/lib/apply';
 import type { DictKey } from '@/lib/i18n';
 
 const deposits: { nameKey: DictKey; rateKey: DictKey; descKey: DictKey; highlight: boolean }[] = [
@@ -75,11 +76,14 @@ export function Deposits() {
               <h3 className="font-display text-xl font-bold text-[var(--text)] mb-2">{t(nameKey)}</h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed mb-6">{t(descKey)}</p>
 
-              <button className={`w-full py-3 rounded-full font-semibold text-sm transition-all ${
-                highlight
-                  ? 'bg-brand hover:bg-brand-600 text-white'
-                  : 'border border-[var(--border)] hover:border-[var(--text)] text-[var(--text)]'
-              }`}>
+              <button
+                onClick={() => openApplication(`${t('deposits.title')} ${t(nameKey)}`)}
+                className={`w-full py-3 rounded-full font-semibold text-sm transition-all ${
+                  highlight
+                    ? 'bg-brand hover:bg-brand-600 text-white'
+                    : 'border border-[var(--border)] hover:border-[var(--text)] text-[var(--text)]'
+                }`}
+              >
                 {t('deposits.open')}
               </button>
             </motion.div>

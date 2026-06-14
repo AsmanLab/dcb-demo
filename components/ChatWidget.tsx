@@ -45,33 +45,75 @@ export function ChatWidget() {
     if (open) setTimeout(() => inputRef.current?.focus(), 300);
   }, [open]);
 
+  // Rule-based reply — used when the Claude API route is unavailable (no key).
+  const fallbackReply = useCallback((text: string) => {
+    const resp = getBotResponse(text, lang);
+    setMessages(prev => [...prev, {
+      id: nextId(), role: 'bot', text: resp.text, chips: resp.chips, timestamp: new Date(),
+    }]);
+  }, [lang]);
+
   const sendMessage = useCallback(async (text: string) => {
-    if (!text.trim()) return;
+    const trimmed = text.trim();
+    if (!trimmed) return;
 
-    const userMsg: ChatMessage = {
-      id: nextId(),
-      role: 'user',
-      text: text.trim(),
-      timestamp: new Date(),
-    };
-
-    setMessages(prev => [...prev, userMsg]);
+    const userMsg: ChatMessage = { id: nextId(), role: 'user', text: trimmed, timestamp: new Date() };
+    // Snapshot history (incl. this message) for the API call.
+    let history: ChatMessage[] = [];
+    setMessages(prev => {
+      history = [...prev, userMsg];
+      return history;
+    });
     setInput('');
     setTyping(true);
 
-    await new Promise(r => setTimeout(r, 600 + Math.random() * 400));
-    setTyping(false);
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          lang,
+          messages: history.map(m => ({ role: m.role, text: m.text })),
+        }),
+      });
 
-    const resp = getBotResponse(text, lang);
-    const botMsg: ChatMessage = {
-      id: nextId(),
-      role: 'bot',
-      text: resp.text,
-      chips: resp.chips,
-      timestamp: new Date(),
-    };
-    setMessages(prev => [...prev, botMsg]);
-  }, [lang]);
+      // No API key (503) or any error → rule-based fallback.
+      if (!res.ok || !res.body) {
+        setTyping(false);
+        fallbackReply(trimmed);
+        return;
+      }
+
+      // Stream the answer token-by-token into a new bot message.
+      const botId = nextId();
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let acc = '';
+      let started = false;
+
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        acc += decoder.decode(value, { stream: true });
+        if (!started) {
+          started = true;
+          setTyping(false);
+          setMessages(prev => [...prev, { id: botId, role: 'bot', text: acc, timestamp: new Date() }]);
+        } else {
+          setMessages(prev => prev.map(m => (m.id === botId ? { ...m, text: acc } : m)));
+        }
+      }
+
+      if (!started) {
+        // Empty stream — fall back rather than show a blank bubble.
+        setTyping(false);
+        fallbackReply(trimmed);
+      }
+    } catch {
+      setTyping(false);
+      fallbackReply(trimmed);
+    }
+  }, [lang, fallbackReply]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

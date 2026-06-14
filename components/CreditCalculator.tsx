@@ -1,9 +1,10 @@
 'use client';
 import React, { useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { AnimatedNumber } from './AnimatedNumber';
 import { Section } from './Section';
 import { useT } from './providers';
+import { openApplication } from '@/lib/apply';
 
 function calcAnnuity(principal: number, annualRate: number, months: number) {
   if (months <= 0 || annualRate <= 0) return { monthly: 0, total: 0, overpay: 0 };
@@ -18,8 +19,7 @@ export function CreditCalculator() {
   const t = useT();
   const [amount, setAmount] = useState(500000);
   const [term, setTerm] = useState(24);
-  const [rate, setRate] = useState(18);
-  const [showToast, setShowToast] = useState(false);
+  const [rate, setRate] = useState(20);
 
   const { monthly, total, overpay } = calcAnnuity(amount, rate, term);
   const paidPct = Math.min((amount / total) * 100, 99);
@@ -28,8 +28,7 @@ export function CreditCalculator() {
     Math.round(n).toLocaleString('ru-KG'), []);
 
   const handleApply = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 4000);
+    openApplication(`${t('calc.title')}: ${fmtSom(amount)} ${t('calc.som')} · ${term} мес. · ${rate}%`);
   };
 
   return (
@@ -178,21 +177,6 @@ export function CreditCalculator() {
           </motion.div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {showToast && (
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 40, scale: 0.9 }}
-            role="status"
-            aria-live="polite"
-            className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-emerald-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm"
-          >
-            {t('toast.success')}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </Section>
   );
 }

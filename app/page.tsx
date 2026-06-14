@@ -2,6 +2,7 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { MobileQuickGrid } from '@/components/MobileQuickGrid';
 import { CurrencyTicker } from '@/components/CurrencyTicker';
 import { TrustBar } from '@/components/TrustBar';
 import { Products } from '@/components/Products';
@@ -28,6 +29,7 @@ export default function Home() {
     <main>
       <Header />
       <Hero onOpenChat={openChat} />
+      <MobileQuickGrid />
       <CurrencyTicker />
       <TrustBar />
       <Promos />

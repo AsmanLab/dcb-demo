@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useT } from './providers';
+import { openApplication } from '@/lib/apply';
 
 export function CTABand() {
   const t = useT();
@@ -21,15 +22,15 @@ export function CTABand() {
           <p className="text-white/70 text-lg mb-8">{t('cta.subtitle')}</p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#"
+            <button
+              onClick={() => openApplication()}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand hover:bg-brand-600 text-white font-bold text-base transition-colors"
             >
               {t('cta.button')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
               </svg>
-            </a>
+            </button>
             <a
               href="tel:8686"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/40 text-white font-bold text-base hover:border-white/70 hover:bg-white/10 transition-all"

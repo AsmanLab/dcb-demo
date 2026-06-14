@@ -3,9 +3,12 @@ import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from './Section';
 import { useT } from './providers';
+import { GoogleMapPanel } from './GoogleMapPanel';
 import { DEPARTMENTS, REGIONS, type Department } from '@/lib/branches';
 
 type Filter = 'all' | 'branch' | 'sberkassa';
+
+const MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 // Google Maps embed needs no API key: coordinates when the source site
 // provides them, otherwise an address search query.
@@ -93,17 +96,26 @@ export function BranchMap() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Google Map */}
-          <div className="lg:col-span-2 rounded-3xl bg-[var(--surface)] border border-[var(--border)] overflow-hidden relative min-h-72">
-            <iframe
-              key={selected.id}
-              src={mapSrc(selected)}
-              title={selected.name}
-              className="absolute inset-0 w-full h-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+          {/* Google Map — interactive JS API when a key is set, else keyless iframe embed */}
+          <div className="lg:col-span-2 rounded-3xl bg-[var(--surface)] border border-[var(--border)] overflow-hidden relative min-h-72 h-[28rem]">
+            {MAPS_KEY ? (
+              <GoogleMapPanel
+                apiKey={MAPS_KEY}
+                departments={filtered}
+                selected={selected}
+                onSelect={setSelected}
+              />
+            ) : (
+              <iframe
+                key={selected.id}
+                src={mapSrc(selected)}
+                title={selected.name}
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            )}
           </div>
 
           {/* Department cards */}
@@ -140,7 +152,7 @@ export function BranchMap() {
                         )}
                       </div>
                       <p className="text-xs text-[var(--muted)] mt-0.5">{dep.address}</p>
-                      <p className="text-[10px] text-[var(--muted)]/70 mt-0.5">{dep.region}</p>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">{dep.region}</p>
                       <div className="flex flex-wrap items-center gap-x-2 mt-1">
                         {dep.hours.map(h => (
                           <span key={h} className={`text-xs font-medium ${dep.is247 ? 'text-emerald-700' : 'text-[var(--muted)]'}`}>

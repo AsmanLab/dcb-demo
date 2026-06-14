@@ -1,5 +1,5 @@
 ﻿'use client';
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import type { Lang } from '@/lib/i18n';
 import { dict } from '@/lib/i18n';
 import type { DictKey } from '@/lib/i18n';
@@ -12,14 +12,14 @@ const ThemeContext = createContext<ThemeCtx>({ theme: 'dark', toggle: () => {} }
 export function useTheme() { return useContext(ThemeContext); }
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-
-  useEffect(() => {
-    const saved = localStorage.getItem('dcb-theme') as Theme | null;
-    const initial = saved === 'dark' ? 'dark' : 'light';
-    setTheme(initial);
-    document.documentElement.classList.toggle('dark', initial === 'dark');
-  }, []);
+  // The inline script in layout.tsx applies the `dark` class before hydration,
+  // so we read the resolved theme from the DOM — no flash, no setState-in-effect.
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) {
+      return 'dark';
+    }
+    return 'light';
+  });
 
   const toggle = useCallback(() => {
     setTheme(prev => {
@@ -41,12 +41,13 @@ export function useLang() { return useContext(LangContext); }
 export function useT() { return useContext(LangContext).t; }
 
 function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('ru');
-
-  useEffect(() => {
-    const saved = localStorage.getItem('dcb-lang') as Lang | null;
-    if (saved === 'ru' || saved === 'kg' || saved === 'en') setLangState(saved);
-  }, []);
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('dcb-lang');
+      if (saved === 'ru' || saved === 'kg' || saved === 'en') return saved;
+    }
+    return 'ru';
+  });
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l);

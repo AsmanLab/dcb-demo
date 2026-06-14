@@ -10,51 +10,97 @@ interface Tab {
   id: TabId;
   labelKey: DictKey;
   target?: string; // section id to scroll to; absent = top
-  icon: React.ReactNode;
+  icon: (active: boolean) => React.ReactNode;
 }
+
+// Rounded, modern glyphs. Inactive = soft outline; active = filled silhouette
+// (theme-aware cut-outs via fill="var(--bg)").
+const svgProps = {
+  viewBox: '0 0 24 24',
+  width: '100%',
+  height: '100%',
+  strokeWidth: 1.9,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+  'aria-hidden': true,
+};
 
 const tabs: Tab[] = [
   {
     id: 'home',
     labelKey: 'bottom.home',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V21h14V9.5" /><path d="M9.5 21v-6h5v6" />
-      </svg>
-    ),
+    icon: (active) =>
+      active ? (
+        <svg {...svgProps} fill="currentColor" stroke="none">
+          <path d="M10.7 3.1a2 2 0 0 1 2.6 0l7 6.05A2 2 0 0 1 21 10.66V19a2.5 2.5 0 0 1-2.5 2.5H15.5V16a3.5 3.5 0 0 0-7 0v5.5H5.5A2.5 2.5 0 0 1 3 19v-8.34a2 2 0 0 1 .7-1.51z" />
+        </svg>
+      ) : (
+        <svg {...svgProps} fill="none" stroke="currentColor">
+          <path d="M4 10.6a2 2 0 0 1 .7-1.52l6-5.2a2 2 0 0 1 2.6 0l6 5.2A2 2 0 0 1 20 10.6V19a2 2 0 0 1-2 2h-3v-5a3 3 0 0 0-6 0v5H6a2 2 0 0 1-2-2z" />
+        </svg>
+      ),
   },
   {
     id: 'products',
     labelKey: 'bottom.products',
     target: 'products',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" />
-        <rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" />
-      </svg>
-    ),
+    icon: (active) =>
+      active ? (
+        <svg {...svgProps} fill="currentColor" stroke="none">
+          <rect x="3" y="3" width="8" height="8" rx="3" />
+          <rect x="13" y="3" width="8" height="8" rx="3" />
+          <rect x="3" y="13" width="8" height="8" rx="3" />
+          <rect x="13" y="13" width="8" height="8" rx="3" />
+        </svg>
+      ) : (
+        <svg {...svgProps} fill="none" stroke="currentColor">
+          <rect x="3.5" y="3.5" width="7" height="7" rx="2.5" />
+          <rect x="13.5" y="3.5" width="7" height="7" rx="2.5" />
+          <rect x="3.5" y="13.5" width="7" height="7" rx="2.5" />
+          <rect x="13.5" y="13.5" width="7" height="7" rx="2.5" />
+        </svg>
+      ),
   },
   {
     id: 'credit',
     labelKey: 'bottom.calc',
     target: 'credit',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="4" y="2" width="16" height="20" rx="2.5" /><line x1="8" y1="6" x2="16" y2="6" />
-        <line x1="8" y1="11" x2="8" y2="11" /><line x1="12" y1="11" x2="12" y2="11" /><line x1="16" y1="11" x2="16" y2="11" />
-        <line x1="8" y1="15" x2="8" y2="15" /><line x1="12" y1="15" x2="12" y2="15" /><line x1="16" y1="15" x2="16" y2="18" />
-      </svg>
-    ),
+    icon: (active) =>
+      active ? (
+        <svg {...svgProps} fill="currentColor" stroke="none">
+          <rect x="4" y="2.5" width="16" height="19" rx="4.5" />
+          <rect x="7.5" y="5.5" width="9" height="3.5" rx="1.75" fill="var(--bg)" />
+          <circle cx="9" cy="13" r="1.15" fill="var(--bg)" />
+          <circle cx="12" cy="13" r="1.15" fill="var(--bg)" />
+          <circle cx="15" cy="13" r="1.15" fill="var(--bg)" />
+          <circle cx="9" cy="17" r="1.15" fill="var(--bg)" />
+          <circle cx="12" cy="17" r="1.15" fill="var(--bg)" />
+          <rect x="13.85" y="15.85" width="2.3" height="5" rx="1.15" fill="var(--bg)" />
+        </svg>
+      ) : (
+        <svg {...svgProps} fill="none" stroke="currentColor">
+          <rect x="4.5" y="3" width="15" height="18" rx="4" />
+          <rect x="7.5" y="6" width="9" height="3" rx="1.5" />
+          <path d="M9 13h0M12 13h0M15 13h0M9 17h0M12 17h0M15 16.5v1.5" />
+        </svg>
+      ),
   },
   {
     id: 'map',
     labelKey: 'bottom.branches',
     target: 'map',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" />
-      </svg>
-    ),
+    icon: (active) =>
+      active ? (
+        <svg {...svgProps} fill="currentColor" stroke="none">
+          <path d="M12 22c-.4 0-.78-.16-1.05-.45C8.2 18.7 4 14.4 4 10a8 8 0 1 1 16 0c0 4.4-4.2 8.7-6.95 11.55-.27.29-.65.45-1.05.45z" />
+          <circle cx="12" cy="10" r="2.9" fill="var(--bg)" />
+        </svg>
+      ) : (
+        <svg {...svgProps} fill="none" stroke="currentColor">
+          <path d="M19 10c0 5.2-5.4 9.6-6.6 10.7a.6.6 0 0 1-.8 0C10.4 19.6 5 15.2 5 10a7 7 0 0 1 14 0z" />
+          <circle cx="12" cy="10" r="2.6" />
+        </svg>
+      ),
   },
 ];
 
@@ -125,24 +171,30 @@ export function BottomNav() {
               <button
                 onClick={() => handleTap(tab)}
                 aria-current={isActive ? 'page' : undefined}
-                className="relative w-full flex flex-col items-center gap-1 pt-2.5 pb-2 px-1 transition-colors"
+                className="relative w-full flex flex-col items-center gap-1 pt-2 pb-1.5 px-1"
               >
-                {isActive && (
+                <span className="relative flex items-center justify-center w-[3.25rem] h-9">
+                  {isActive && (
+                    <motion.span
+                      layoutId="bottomnav-pill"
+                      className="absolute inset-0 rounded-[1rem] bg-brand/12"
+                      transition={{ type: 'spring', stiffness: 500, damping: 38 }}
+                      aria-hidden="true"
+                    />
+                  )}
                   <motion.span
-                    layoutId="bottomnav-active"
-                    className="absolute top-0 h-0.5 w-8 rounded-full bg-brand"
-                    transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-                    aria-hidden="true"
-                  />
-                )}
-                <span
-                  className={`w-7 h-7 transition-colors ${isActive ? 'text-brand' : 'text-[var(--muted)]'}`}
-                >
-                  {tab.icon}
+                    animate={{ scale: isActive ? 1.06 : 1 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 24 }}
+                    className={`relative w-[1.6rem] h-[1.6rem] transition-colors duration-200 ${
+                      isActive ? 'text-brand' : 'text-[var(--muted)]'
+                    }`}
+                  >
+                    {tab.icon(isActive)}
+                  </motion.span>
                 </span>
                 <span
-                  className={`text-[11px] font-semibold leading-none transition-colors ${
-                    isActive ? 'text-brand' : 'text-[var(--muted)]'
+                  className={`text-[11px] leading-none transition-colors duration-200 ${
+                    isActive ? 'text-brand font-bold' : 'text-[var(--muted)] font-medium'
                   }`}
                 >
                   {t(tab.labelKey)}
