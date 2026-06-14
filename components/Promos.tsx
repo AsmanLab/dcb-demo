@@ -71,7 +71,7 @@ export function Promos() {
       </div>
 
       {/* Horizontal scroller — edge-to-edge with snap */}
-      <div className="overflow-x-auto scrollbar-none snap-x snap-mandatory">
+      <div className="overflow-x-auto overflow-y-hidden scrollbar-none snap-x snap-mandatory">
         <div className="flex gap-5 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-max">
           {offers.map(offer => (
             <div key={offer.id} className="snap-start w-[280px] sm:w-[320px] flex-shrink-0">
