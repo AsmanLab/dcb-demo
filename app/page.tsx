@@ -4,7 +4,6 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { MobileQuickGrid } from '@/components/MobileQuickGrid';
 import { CurrencyTicker } from '@/components/CurrencyTicker';
-import { TrustBar } from '@/components/TrustBar';
 import { FeaturedProducts } from '@/components/FeaturedProducts';
 import { Promos } from '@/components/Promos';
 import { CreditCalculator } from '@/components/CreditCalculator';
@@ -31,7 +30,6 @@ export default function Home() {
       <Hero onOpenChat={openChat} />
       <MobileQuickGrid />
       <CurrencyTicker />
-      <TrustBar />
       <FeaturedProducts />
       <Promos />
       <CreditCalculator />
