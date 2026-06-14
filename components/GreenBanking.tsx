@@ -96,7 +96,7 @@ export function GreenBanking() {
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             {GREEN_PARTNERS.map((name) => (
-              <span key={name} className="text-sm font-bold text-[var(--muted)]/70 whitespace-nowrap">
+              <span key={name} className="text-sm font-bold text-[var(--muted)] whitespace-nowrap">
                 {name}
               </span>
             ))}

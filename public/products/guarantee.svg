@@ -1,0 +1,16 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gr-shield" x1="78" y1="40" x2="182" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#A06BFF"/><stop offset="1" stop-color="#5B21B6"/></linearGradient>
+    <linearGradient id="gr-doc" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F4F6F9"/><stop offset="1" stop-color="#D5DAE2"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="182" rx="90" ry="14" fill="#000" opacity="0.08"/>
+  <!-- document behind -->
+  <g transform="rotate(-10 96 110)">
+    <rect x="58" y="64" width="76" height="98" rx="10" fill="url(#gr-doc)"/>
+    <g stroke="#9AA4B4" stroke-width="4.5" stroke-linecap="round"><line x1="70" y1="86" x2="120" y2="86"/><line x1="70" y1="100" x2="120" y2="100"/><line x1="70" y1="114" x2="100" y2="114"/></g>
+  </g>
+  <!-- shield -->
+  <path d="M150 48 L194 64 V108 c0 30 -24 47 -44 57 c-20 -10 -44 -27 -44 -57 V64 z" fill="url(#gr-shield)"/>
+  <path d="M150 48 L194 64 V80 H106 V64 z" fill="#fff" opacity="0.16"/>
+  <path d="M135 106 l9 9 16 -18" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

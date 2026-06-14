@@ -3,6 +3,10 @@ import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { ChatWidget } from "@/components/ChatWidget";
+import { BottomNav } from "@/components/BottomNav";
+import { StructuredData } from "@/components/StructuredData";
+import { ApplicationModal } from "@/components/ApplicationModal";
+import { ServiceWorker } from "@/components/ServiceWorker";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -20,10 +24,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Дос-Кредобанк — Цифровой банк 24/7",
-  description: "ОАО «Дос-Кредобанк» — надёжный банк Кыргызстана. Кредиты, депозиты, карты, переводы. Лицензия НБ КР №037.",
+  description: "ОАО «Дос-Кредобанк» — надёжный банк Кыргызстана с 1997 года. Кредиты от 20%, депозиты до 14%, карты Элкарт, переводы по 170+ странам. Лицензия НБ КР №037.",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "DCB",
+    statusBarStyle: "black-translucent",
+  },
   openGraph: {
     title: "Дос-Кредобанк — Цифровой банк 24/7",
-    description: "Надёжный банк Кыргызстана. Кредиты от 18%, депозиты до 14%, карты Visa и Elcard.",
+    description: "Надёжный банк Кыргызстана. Кредиты от 20%, депозит «Бай Бол» до 14%, карты Элкарт, переводы по 170+ странам.",
     locale: "ru_KG",
     type: "website",
   },
@@ -56,11 +66,15 @@ export default function RootLayout({
             `,
           }}
         />
+        <StructuredData />
       </head>
-      <body className="min-h-screen">
+      <body className="min-h-screen pb-[68px] lg:pb-0">
         <Providers>
           {children}
+          <BottomNav />
           <ChatWidget />
+          <ApplicationModal />
+          <ServiceWorker />
         </Providers>
       </body>
     </html>

@@ -1,0 +1,18 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ec-coin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFD978"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+    <linearGradient id="ec-leaf" x1="90" y1="50" x2="180" y2="140" gradientUnits="userSpaceOnUse"><stop stop-color="#5BD98A"/><stop offset="1" stop-color="#0E9F58"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="180" rx="92" ry="14" fill="#000" opacity="0.08"/>
+  <!-- coin base -->
+  <ellipse cx="130" cy="150" rx="56" ry="18" fill="url(#ec-coin)"/>
+  <rect x="74" y="126" width="112" height="24" fill="url(#ec-coin)"/>
+  <ellipse cx="130" cy="126" rx="56" ry="18" fill="#FFE6A6"/>
+  <ellipse cx="130" cy="126" rx="40" ry="12" fill="#FBD27A" opacity="0.7"/>
+  <!-- sprout -->
+  <path d="M130 126 C130 100 130 84 130 70" stroke="#0E9F58" stroke-width="6" stroke-linecap="round"/>
+  <path d="M130 96 C112 96 100 84 100 68 C120 68 132 80 130 96z" fill="url(#ec-leaf)"/>
+  <path d="M130 84 C148 84 160 72 160 56 C140 56 128 68 130 84z" fill="url(#ec-leaf)"/>
+  <!-- coin symbol -->
+  <text x="130" y="132" text-anchor="middle" fill="#E0982C" font-family="Arial, sans-serif" font-size="16" font-weight="800">сом</text>
+</svg>

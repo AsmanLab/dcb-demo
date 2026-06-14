@@ -104,6 +104,13 @@ export const dict = {
   'map.filter.exchange': { ru: 'Обмен валют', kg: 'Валюта алмашуу', en: 'Exchange' },
   'map.filter.247': { ru: '24/7', kg: '24/7', en: '24/7' },
   'map.note': { ru: 'В продакшн-версии — интерактивная карта Google Maps', kg: 'Продакшн версиясында — интерактивдүү Google Maps картасы', en: 'In production — interactive Google Maps' },
+  // Mobile bottom navigation
+  'bottom.home': { ru: 'Главная', kg: 'Башкы', en: 'Home' },
+  'bottom.products': { ru: 'Продукты', kg: 'Продукт', en: 'Products' },
+  'bottom.calc': { ru: 'Калькулятор', kg: 'Калькулятор', en: 'Calculator' },
+  'bottom.branches': { ru: 'Отделения', kg: 'Бөлүмдөр', en: 'Branches' },
+  'bottom.assistant': { ru: 'Помощник', kg: 'Жардамчы', en: 'Assistant' },
+
   'map.filter.all': { ru: 'Все', kg: 'Баары', en: 'All' },
   'map.filter.filials': { ru: 'Филиалы', kg: 'Филиалдар', en: 'Branches' },
   'map.filter.sber': { ru: 'Сберкассы', kg: 'Аманат кассалары', en: 'Savings Offices' },
@@ -140,6 +147,20 @@ export const dict = {
   // Toast
   'toast.success': { ru: 'Заявка отправлена! Мы свяжемся с вами в течение 24 часов.', kg: 'Арыз жөнөтүлдү! Биз сиз менен 24 саат ичинде байланышабыз.', en: 'Application submitted! We will contact you within 24 hours.' },
 
+  // Application form
+  'apply.title': { ru: 'Оформить заявку', kg: 'Арыз берүү', en: 'Apply Now' },
+  'apply.subtitle': { ru: 'Оставьте контакты — перезвоним в течение 24 часов', kg: 'Байланыш калтырыңыз — 24 саат ичинде чалабыз', en: 'Leave your details — we will call back within 24 hours' },
+  'apply.product': { ru: 'Продукт', kg: 'Продукт', en: 'Product' },
+  'apply.name': { ru: 'Ваше имя', kg: 'Атыңыз', en: 'Your name' },
+  'apply.namePh': { ru: 'Например, Айбек', kg: 'Мисалы, Айбек', en: 'e.g. Aibek' },
+  'apply.phone': { ru: 'Телефон', kg: 'Телефон', en: 'Phone' },
+  'apply.submit': { ru: 'Отправить заявку', kg: 'Арызды жөнөтүү', en: 'Submit application' },
+  'apply.errName': { ru: 'Введите имя', kg: 'Атыңызды жазыңыз', en: 'Enter your name' },
+  'apply.errPhone': { ru: 'Введите корректный номер', kg: 'Туура номер жазыңыз', en: 'Enter a valid number' },
+  'apply.successTitle': { ru: 'Заявка принята!', kg: 'Арыз кабыл алынды!', en: 'Application received!' },
+  'apply.close': { ru: 'Закрыть', kg: 'Жабуу', en: 'Close' },
+  'apply.agree': { ru: 'Нажимая кнопку, вы соглашаетесь на обработку персональных данных', kg: 'Баскычты басуу менен жеке маалыматтарды иштетүүгө макул болосуз', en: 'By submitting, you agree to the processing of personal data' },
+
   // Loans (rate ladder)
   'loans.ladder.title': { ru: 'Ставки потребительского кредита', kg: 'Керектөө насыясынын ставкалары', en: 'Consumer Loan Rates' },
   'loans.ladder.amount': { ru: 'Сумма, сом', kg: 'Сумма, сом', en: 'Amount, KGS' },
@@ -164,6 +185,35 @@ export const dict = {
   'deposits.table.note': { ru: 'Акция до 31.07.2026 · капитализация ежемесячно', kg: 'Акция 31.07.2026га чейин · ай сайын капитализация', en: 'Promo until 31.07.2026 · monthly capitalization' },
   'deposits.min': { ru: 'Минимальный взнос', kg: 'Минималдуу салым', en: 'Minimum deposit' },
   'deposits.insurance': { ru: 'Вклады застрахованы до 1 000 000 сом — Агентство по защите депозитов КР', kg: 'Аманаттар 1 000 000 сомго чейин камсыздандырылган — КР Депозиттерди коргоо агенттиги', en: 'Deposits insured up to 1,000,000 KGS — Deposit Protection Agency of the KR' },
+
+  // Featured products (bento)
+  'feat.title': { ru: 'Рекомендуемые продукты', kg: 'Сунушталган продуктулар', en: 'Recommended Products' },
+  'feat.all': { ru: 'Все продукты', kg: 'Бардык продуктулар', en: 'All Products' },
+
+  // Catalog page
+  'catalog.title': { ru: 'Все продукты банка', kg: 'Банктын бардык продуктулары', en: 'All Bank Products' },
+  'catalog.subtitle': { ru: 'Полный каталог продуктов и сервисов Дос-Кредобанк', kg: 'Дос-Кредобанктын продуктулары жана кызматтарынын толук каталогу', en: 'The full catalogue of Dos-Credobank products and services' },
+  'catalog.back': { ru: 'На главную', kg: 'Башкы бетке', en: 'Home' },
+
+  'feat.cash.name': { ru: 'Кредит наличными', kg: 'Накталай насыя', en: 'Cash Loan' },
+  'feat.cash.desc': { ru: 'От 5 000 до 12 000 000 сом на любые цели. Решение за 5 дней.', kg: 'Каалаган максатка 5 000ден 12 000 000 сомго чейин. Чечим 5 күндө.', en: 'From 5,000 to 12,000,000 KGS for any purpose. Decision in 5 days.' },
+  'feat.cash.cta': { ru: 'Рассчитать', kg: 'Эсептөө', en: 'Calculate' },
+
+  'feat.card.name': { ru: 'Карта «Элкарт DCB»', kg: '«Элкарт DCB» картасы', en: '"Elcart DCB" Card' },
+  'feat.card.desc': { ru: 'До 2 карт на счёт, QR-оплата и бесконтакт. Выпуск 7–14 дней.', kg: 'Эсепке 2 картага чейин, QR жана байланышсыз төлөм. Чыгаруу 7–14 күн.', en: 'Up to 2 cards per account, QR and contactless. Issued in 7–14 days.' },
+  'feat.card.cta': { ru: 'Оформить карту', kg: 'Карта тариздөө', en: 'Get the Card' },
+
+  'feat.business.name': { ru: 'Бизнесу', kg: 'Бизнеске', en: 'For Business' },
+  'feat.business.desc': { ru: 'РКО — счёт от 15 минут. QR и POS-терминалы за 0 сом.', kg: 'РКО — эсеп 15 мүнөттөн. QR жана POS-терминалдар 0 сом.', en: 'Settlement account in 15 min. QR & POS terminals for 0 KGS.' },
+  'feat.business.cta': { ru: 'Открыть счёт', kg: 'Эсеп ачуу', en: 'Open an Account' },
+
+  'feat.transfers.name': { ru: 'Переводы', kg: 'Которуулар', en: 'Transfers' },
+  'feat.transfers.desc': { ru: 'Золотая Корона, SWIFT и переводы в Китай на WeChat.', kg: 'Золотая Корона, SWIFT жана Кытайга WeChat которуулар.', en: 'Golden Crown, SWIFT and WeChat transfers to China.' },
+  'feat.transfers.cta': { ru: 'Отправить', kg: 'Жөнөтүү', en: 'Send' },
+
+  'feat.deposit.name': { ru: 'Депозит «Бай Бол»', kg: '«Бай Бол» аманаты', en: '"Bai Bol" Deposit' },
+  'feat.deposit.desc': { ru: 'До 14% годовых. Акция до 31.07.2026. Вклады застрахованы.', kg: 'Жылдык 14%га чейин. Акция 31.07.2026га чейин. Аманаттар камсыздандырылган.', en: 'Up to 14% p.a. Promo until 31.07.2026. Deposits insured.' },
+  'feat.deposit.cta': { ru: 'Открыть вклад', kg: 'Аманат ачуу', en: 'Open a Deposit' },
 
   // Promos
   'promos.title': { ru: 'Специальные предложения', kg: 'Атайын сунуштар', en: 'Special Offers' },

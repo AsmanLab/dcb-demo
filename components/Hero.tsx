@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useT } from './providers';
+import { openApplication } from '@/lib/apply';
 
 interface HeroProps {
   onOpenChat: () => void;
@@ -15,9 +16,9 @@ export function Hero({ onOpenChat }: HeroProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
         {/* Graphite hero card — Bakai-style large rounded card */}
         <div className="rounded-3xl bg-[#14161D] overflow-hidden relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[420px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[300px] lg:min-h-[420px]">
             {/* Left: copy */}
-            <div className="px-8 sm:px-12 py-12 lg:py-16 space-y-6">
+            <div className="px-6 sm:px-12 py-9 lg:py-16 space-y-5 lg:space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -46,15 +47,15 @@ export function Hero({ onOpenChat }: HeroProps) {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="flex flex-wrap gap-3 pt-2"
               >
-                <a
-                  href="#products"
+                <button
+                  onClick={() => openApplication()}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand hover:bg-brand-600 text-white font-semibold text-sm transition-colors"
                 >
                   {t('hero.cta.open')}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                   </svg>
-                </a>
+                </button>
                 <button
                   onClick={onOpenChat}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 hover:border-white/60 text-white font-semibold text-sm transition-colors"

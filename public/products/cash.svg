@@ -1,0 +1,33 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cs-case" x1="60" y1="70" x2="200" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9ECF1"/><stop offset="1" stop-color="#C4CAD4"/>
+    </linearGradient>
+    <linearGradient id="cs-lid" x1="60" y1="40" x2="200" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F6F9"/><stop offset="1" stop-color="#D5DAE2"/>
+    </linearGradient>
+    <linearGradient id="cs-cash" x1="90" y1="90" x2="170" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB347"/><stop offset="1" stop-color="#FF8A1E"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="130" cy="178" rx="92" ry="16" fill="#000" opacity="0.07"/>
+  <!-- open lid -->
+  <path d="M62 96 L70 44 a8 8 0 0 1 8 -6 h104 a8 8 0 0 1 8 6 l8 52 z" fill="url(#cs-lid)"/>
+  <rect x="74" y="50" width="112" height="40" rx="6" fill="#fff" opacity="0.5"/>
+  <!-- case body -->
+  <rect x="58" y="94" width="144" height="74" rx="14" fill="url(#cs-case)"/>
+  <rect x="58" y="94" width="144" height="20" rx="10" fill="#fff" opacity="0.35"/>
+  <!-- cash stacks -->
+  <g>
+    <rect x="86" y="96" width="38" height="26" rx="3" fill="url(#cs-cash)"/>
+    <rect x="86" y="103" width="38" height="5" fill="#fff" opacity="0.6"/>
+    <circle cx="105" cy="109" r="5" fill="#fff" opacity="0.85"/>
+    <rect x="130" y="100" width="38" height="24" rx="3" fill="#34C77B"/>
+    <rect x="130" y="107" width="38" height="5" fill="#fff" opacity="0.55"/>
+    <circle cx="149" cy="112" r="5" fill="#fff" opacity="0.85"/>
+  </g>
+  <!-- handle -->
+  <path d="M150 168 v8 a8 8 0 0 0 8 8 h6 a8 8 0 0 0 8 -8 v-8" stroke="#FFC75A" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <circle cx="196" cy="150" r="14" fill="#FFC75A"/>
+  <circle cx="196" cy="150" r="6" fill="#fff" opacity="0.85"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tc-coin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFD978"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+    <linearGradient id="tc-crown" x1="80" y1="50" x2="180" y2="110" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE08A"/><stop offset="1" stop-color="#E0A93B"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="182" rx="90" ry="14" fill="#000" opacity="0.08"/>
+  <!-- big coin -->
+  <ellipse cx="130" cy="138" rx="62" ry="58" fill="url(#tc-coin)"/>
+  <ellipse cx="130" cy="132" rx="62" ry="58" fill="#FFE6A6"/>
+  <ellipse cx="130" cy="132" rx="46" ry="43" fill="#FBD27A" opacity="0.65"/>
+  <!-- crown -->
+  <path d="M96 116 L90 78 L112 96 L130 66 L148 96 L170 78 L164 116 z" fill="url(#tc-crown)" stroke="#E0A93B" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="96" y="118" width="68" height="10" rx="3" fill="url(#tc-crown)"/>
+  <circle cx="130" cy="66" r="4" fill="#E4577E"/>
+  <circle cx="90" cy="78" r="3.5" fill="#5B8DEF"/>
+  <circle cx="170" cy="78" r="3.5" fill="#5B8DEF"/>
+</svg>

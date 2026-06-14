@@ -1,0 +1,32 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dp-coin" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFD978"/><stop offset="1" stop-color="#F2A93B"/>
+    </linearGradient>
+    <linearGradient id="dp-shield" x1="80" y1="40" x2="180" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFC75A"/><stop offset="1" stop-color="#F39200"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="130" cy="180" rx="94" ry="15" fill="#000" opacity="0.08"/>
+  <!-- coin stacks -->
+  <g>
+    <ellipse cx="70" cy="158" rx="26" ry="9" fill="url(#dp-coin)"/>
+    <rect x="44" y="134" width="52" height="24" fill="url(#dp-coin)"/>
+    <ellipse cx="70" cy="134" rx="26" ry="9" fill="#FFE6A6"/>
+    <ellipse cx="70" cy="134" rx="13" ry="4.5" fill="#E0982C" opacity="0.6"/>
+  </g>
+  <g>
+    <ellipse cx="196" cy="164" rx="22" ry="8" fill="url(#dp-coin)"/>
+    <rect x="174" y="146" width="44" height="18" fill="url(#dp-coin)"/>
+    <ellipse cx="196" cy="146" rx="22" ry="8" fill="#FFE6A6"/>
+    <ellipse cx="196" cy="146" rx="11" ry="4" fill="#E0982C" opacity="0.6"/>
+  </g>
+  <!-- shield with % -->
+  <path d="M130 40 L172 56 V104 c0 30 -24 46 -42 56 c-18 -10 -42 -26 -42 -56 V56 z" fill="url(#dp-shield)"/>
+  <path d="M130 40 L172 56 V72 H88 V56 z" fill="#fff" opacity="0.18"/>
+  <g stroke="#fff" stroke-width="6" stroke-linecap="round">
+    <line x1="116" y1="104" x2="144" y2="78"/>
+  </g>
+  <circle cx="116" cy="82" r="6" fill="#fff"/>
+  <circle cx="144" cy="100" r="6" fill="#fff"/>
+</svg>
