@@ -45,7 +45,7 @@ export const megaMenu: Partial<Record<DictKey, MenuSection[]>> = {
     {
       title: { ru: 'Сервисы', kg: 'Кызматтар', en: 'Services' },
       links: [
-        { label: { ru: 'Кредитный калькулятор', kg: 'Насыя калькулятору', en: 'Loan Calculator' }, href: '#calculator' },
+        { label: { ru: 'Кредитный калькулятор', kg: 'Насыя калькулятору', en: 'Loan Calculator' }, href: '#credit' },
         { label: { ru: 'DCB Гид — вопросы и ответы', kg: 'DCB Гид — суроо-жооптор', en: 'DCB Guide — Q&A' }, href: '#faq' },
       ],
     },

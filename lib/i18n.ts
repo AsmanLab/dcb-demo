@@ -104,6 +104,13 @@ export const dict = {
   'map.filter.exchange': { ru: 'Обмен валют', kg: 'Валюта алмашуу', en: 'Exchange' },
   'map.filter.247': { ru: '24/7', kg: '24/7', en: '24/7' },
   'map.note': { ru: 'В продакшн-версии — интерактивная карта Google Maps', kg: 'Продакшн версиясында — интерактивдүү Google Maps картасы', en: 'In production — interactive Google Maps' },
+  // Mobile bottom navigation
+  'bottom.home': { ru: 'Главная', kg: 'Башкы', en: 'Home' },
+  'bottom.products': { ru: 'Продукты', kg: 'Продукт', en: 'Products' },
+  'bottom.calc': { ru: 'Калькулятор', kg: 'Калькулятор', en: 'Calculator' },
+  'bottom.branches': { ru: 'Отделения', kg: 'Бөлүмдөр', en: 'Branches' },
+  'bottom.assistant': { ru: 'Помощник', kg: 'Жардамчы', en: 'Assistant' },
+
   'map.filter.all': { ru: 'Все', kg: 'Баары', en: 'All' },
   'map.filter.filials': { ru: 'Филиалы', kg: 'Филиалдар', en: 'Branches' },
   'map.filter.sber': { ru: 'Сберкассы', kg: 'Аманат кассалары', en: 'Savings Offices' },

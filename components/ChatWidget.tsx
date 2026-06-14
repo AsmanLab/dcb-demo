@@ -98,8 +98,8 @@ export function ChatWidget() {
 
   return (
     <>
-      {/* Launcher button */}
-      <div className="fixed bottom-6 right-6 z-40" aria-label="Открыть чат с AI-консультантом">
+      {/* Launcher button — floats above the mobile bottom nav, bottom-right on desktop */}
+      <div className="fixed right-4 lg:right-6 bottom-[calc(68px+env(safe-area-inset-bottom)+1rem)] lg:bottom-6 z-50" aria-label="Открыть чат с AI-консультантом">
         <motion.button
           onClick={() => setOpen(o => !o)}
           aria-label={open ? 'Закрыть чат' : 'Открыть AI-консультант'}
@@ -135,7 +135,7 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 28 }}
-            className="fixed bottom-24 right-6 z-40 w-[calc(100vw-3rem)] sm:w-96 bg-[var(--bg)] rounded-3xl border border-[var(--border)] shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-[calc(68px+env(safe-area-inset-bottom)+4.5rem)] right-4 lg:bottom-24 lg:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 bg-[var(--bg)] rounded-3xl border border-[var(--border)] shadow-2xl flex flex-col overflow-hidden"
             style={{ maxHeight: 'min(560px, calc(100vh - 8rem))' }}
             role="dialog"
             aria-modal="true"

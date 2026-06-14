@@ -3,6 +3,7 @@ import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { ChatWidget } from "@/components/ChatWidget";
+import { BottomNav } from "@/components/BottomNav";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -57,9 +58,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen">
+      <body className="min-h-screen pb-[68px] lg:pb-0">
         <Providers>
           {children}
+          <BottomNav />
           <ChatWidget />
         </Providers>
       </body>
