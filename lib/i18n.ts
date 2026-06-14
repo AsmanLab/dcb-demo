@@ -186,6 +186,30 @@ export const dict = {
   'deposits.min': { ru: 'Минимальный взнос', kg: 'Минималдуу салым', en: 'Minimum deposit' },
   'deposits.insurance': { ru: 'Вклады застрахованы до 1 000 000 сом — Агентство по защите депозитов КР', kg: 'Аманаттар 1 000 000 сомго чейин камсыздандырылган — КР Депозиттерди коргоо агенттиги', en: 'Deposits insured up to 1,000,000 KGS — Deposit Protection Agency of the KR' },
 
+  // Featured products (bento)
+  'feat.title': { ru: 'Рекомендуемые продукты', kg: 'Сунушталган продуктулар', en: 'Recommended Products' },
+  'feat.all': { ru: 'Все продукты', kg: 'Бардык продуктулар', en: 'All Products' },
+
+  'feat.cash.name': { ru: 'Кредит наличными', kg: 'Накталай насыя', en: 'Cash Loan' },
+  'feat.cash.desc': { ru: 'От 5 000 до 12 000 000 сом на любые цели. Решение за 5 дней.', kg: 'Каалаган максатка 5 000ден 12 000 000 сомго чейин. Чечим 5 күндө.', en: 'From 5,000 to 12,000,000 KGS for any purpose. Decision in 5 days.' },
+  'feat.cash.cta': { ru: 'Рассчитать', kg: 'Эсептөө', en: 'Calculate' },
+
+  'feat.card.name': { ru: 'Карта «Элкарт DCB»', kg: '«Элкарт DCB» картасы', en: '"Elcart DCB" Card' },
+  'feat.card.desc': { ru: 'До 2 карт на счёт, QR-оплата и бесконтакт. Выпуск 7–14 дней.', kg: 'Эсепке 2 картага чейин, QR жана байланышсыз төлөм. Чыгаруу 7–14 күн.', en: 'Up to 2 cards per account, QR and contactless. Issued in 7–14 days.' },
+  'feat.card.cta': { ru: 'Оформить карту', kg: 'Карта тариздөө', en: 'Get the Card' },
+
+  'feat.business.name': { ru: 'Бизнесу', kg: 'Бизнеске', en: 'For Business' },
+  'feat.business.desc': { ru: 'РКО — счёт от 15 минут. QR и POS-терминалы за 0 сом.', kg: 'РКО — эсеп 15 мүнөттөн. QR жана POS-терминалдар 0 сом.', en: 'Settlement account in 15 min. QR & POS terminals for 0 KGS.' },
+  'feat.business.cta': { ru: 'Открыть счёт', kg: 'Эсеп ачуу', en: 'Open an Account' },
+
+  'feat.transfers.name': { ru: 'Переводы', kg: 'Которуулар', en: 'Transfers' },
+  'feat.transfers.desc': { ru: 'Золотая Корона, SWIFT и переводы в Китай на WeChat.', kg: 'Золотая Корона, SWIFT жана Кытайга WeChat которуулар.', en: 'Golden Crown, SWIFT and WeChat transfers to China.' },
+  'feat.transfers.cta': { ru: 'Отправить', kg: 'Жөнөтүү', en: 'Send' },
+
+  'feat.deposit.name': { ru: 'Депозит «Бай Бол»', kg: '«Бай Бол» аманаты', en: '"Bai Bol" Deposit' },
+  'feat.deposit.desc': { ru: 'До 14% годовых. Акция до 31.07.2026. Вклады застрахованы.', kg: 'Жылдык 14%га чейин. Акция 31.07.2026га чейин. Аманаттар камсыздандырылган.', en: 'Up to 14% p.a. Promo until 31.07.2026. Deposits insured.' },
+  'feat.deposit.cta': { ru: 'Открыть вклад', kg: 'Аманат ачуу', en: 'Open a Deposit' },
+
   // Promos
   'promos.title': { ru: 'Специальные предложения', kg: 'Атайын сунуштар', en: 'Special Offers' },
   'promos.subtitle': { ru: 'Актуальные акции банка', kg: 'Банктын учурдагы акциялары', en: 'Current bank promotions' },

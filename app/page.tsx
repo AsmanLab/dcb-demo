@@ -5,7 +5,7 @@ import { Hero } from '@/components/Hero';
 import { MobileQuickGrid } from '@/components/MobileQuickGrid';
 import { CurrencyTicker } from '@/components/CurrencyTicker';
 import { TrustBar } from '@/components/TrustBar';
-import { Products } from '@/components/Products';
+import { FeaturedProducts } from '@/components/FeaturedProducts';
 import { Promos } from '@/components/Promos';
 import { CreditCalculator } from '@/components/CreditCalculator';
 import { Deposits } from '@/components/Deposits';
@@ -32,8 +32,8 @@ export default function Home() {
       <MobileQuickGrid />
       <CurrencyTicker />
       <TrustBar />
+      <FeaturedProducts />
       <Promos />
-      <Products />
       <CreditCalculator />
       <Deposits />
       <FAQ />
