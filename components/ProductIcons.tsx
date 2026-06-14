@@ -7,7 +7,9 @@ import React from 'react';
 export type ProductIconName =
   | 'cards' | 'loans' | 'deposits' | 'transfers'
   | 'business' | 'calculator' | 'branches' | 'assistant'
-  | 'qr' | 'rates';
+  | 'qr' | 'rates'
+  | 'pension' | 'social' | 'kids' | 'account'
+  | 'guarantee' | 'globe' | 'leaf' | 'percent';
 
 interface TileProps {
   id: string;
@@ -102,6 +104,58 @@ const ICONS: Record<ProductIconName, (size: number) => React.ReactNode> = {
     <Tile id="ic-rates" from="#22B8CF" to="#0B7285" size={s}>
       <path d="M19 35l5-6 4 3 9-9" />
       <path d="M33 23h4v4" />
+    </Tile>
+  ),
+  pension: (s) => (
+    <Tile id="ic-pension" from="#34C77B" to="#0E9F58" size={s}>
+      <circle cx="28" cy="22" r="5" />
+      <path d="M19 38c0-5 4-8.5 9-8.5s9 3.5 9 8.5" />
+    </Tile>
+  ),
+  social: (s) => (
+    <Tile id="ic-social" from="#2DD4BF" to="#0E9488" size={s}>
+      <path d="M28 38s-10-6-10-13a5.5 5.5 0 0 1 10-2 5.5 5.5 0 0 1 10 2c0 7-10 13-10 13z" />
+    </Tile>
+  ),
+  kids: (s) => (
+    <Tile id="ic-kids" from="#FF8FB1" to="#E4577E" size={s}>
+      <circle cx="28" cy="28" r="11" />
+      <circle cx="24" cy="25" r="1.4" fill="white" stroke="none" />
+      <circle cx="32" cy="25" r="1.4" fill="white" stroke="none" />
+      <path d="M23.5 31a5 4 0 0 0 9 0" />
+    </Tile>
+  ),
+  account: (s) => (
+    <Tile id="ic-account" from="#5B8DEF" to="#3358D4" size={s}>
+      <rect x="17" y="16" width="22" height="24" rx="3.5" />
+      <path d="M22 23h12M22 28h9" />
+      <path d="M30 34l2.6 2.6 5-5.5" />
+    </Tile>
+  ),
+  guarantee: (s) => (
+    <Tile id="ic-guarantee" from="#A06BFF" to="#6D28D9" size={s}>
+      <path d="M28 16l9 4v8c0 7-5 11-9 13-4-2-9-6-9-13v-8z" />
+      <path d="M23.5 28l3.2 3.2 6-6.4" />
+    </Tile>
+  ),
+  globe: (s) => (
+    <Tile id="ic-globe" from="#3BC9DB" to="#1098AD" size={s}>
+      <circle cx="28" cy="28" r="12" />
+      <path d="M16 28h24" />
+      <path d="M28 16c4 4.5 4 19.5 0 24M28 16c-4 4.5-4 19.5 0 24" />
+    </Tile>
+  ),
+  leaf: (s) => (
+    <Tile id="ic-leaf" from="#5BD98A" to="#0E9F58" size={s}>
+      <path d="M20 36c-2-10 4-18 16-20 2 10-4 18-16 20z" />
+      <path d="M22.5 33.5c4-6 8-9.5 12-11.5" />
+    </Tile>
+  ),
+  percent: (s) => (
+    <Tile id="ic-percent" from="#FFC75A" to="#F39200" size={s}>
+      <line x1="22" y1="22" x2="34" y2="34" />
+      <circle cx="23" cy="23" r="2.4" />
+      <circle cx="33" cy="33" r="2.4" />
     </Tile>
   ),
 };

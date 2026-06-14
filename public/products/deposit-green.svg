@@ -1,0 +1,18 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dg-coin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFD978"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+    <linearGradient id="dg-leaf" x1="90" y1="40" x2="180" y2="130" gradientUnits="userSpaceOnUse"><stop stop-color="#5BD98A"/><stop offset="1" stop-color="#0E9F58"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="182" rx="92" ry="14" fill="#000" opacity="0.08"/>
+  <!-- coin base -->
+  <ellipse cx="130" cy="156" rx="54" ry="16" fill="url(#dg-coin)"/>
+  <rect x="76" y="134" width="108" height="22" fill="url(#dg-coin)"/>
+  <ellipse cx="130" cy="134" rx="54" ry="16" fill="#FFE6A6"/>
+  <ellipse cx="130" cy="134" rx="38" ry="11" fill="#FBD27A" opacity="0.7"/>
+  <!-- sprout -->
+  <path d="M130 134 C130 108 130 92 130 76" stroke="#0E9F58" stroke-width="6" stroke-linecap="round"/>
+  <path d="M130 100 C112 100 100 88 100 72 C120 72 132 84 130 100z" fill="url(#dg-leaf)"/>
+  <path d="M130 88 C148 88 160 76 160 60 C140 60 128 72 130 88z" fill="url(#dg-leaf)"/>
+  <circle cx="196" cy="150" r="13" fill="url(#dg-coin)"/>
+  <text x="196" y="155" text-anchor="middle" fill="#E0982C" font-family="Arial, sans-serif" font-size="13" font-weight="800">%</text>
+</svg>

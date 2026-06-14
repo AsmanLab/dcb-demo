@@ -190,6 +190,11 @@ export const dict = {
   'feat.title': { ru: 'Рекомендуемые продукты', kg: 'Сунушталган продуктулар', en: 'Recommended Products' },
   'feat.all': { ru: 'Все продукты', kg: 'Бардык продуктулар', en: 'All Products' },
 
+  // Catalog page
+  'catalog.title': { ru: 'Все продукты банка', kg: 'Банктын бардык продуктулары', en: 'All Bank Products' },
+  'catalog.subtitle': { ru: 'Полный каталог продуктов и сервисов Дос-Кредобанк', kg: 'Дос-Кредобанктын продуктулары жана кызматтарынын толук каталогу', en: 'The full catalogue of Dos-Credobank products and services' },
+  'catalog.back': { ru: 'На главную', kg: 'Башкы бетке', en: 'Home' },
+
   'feat.cash.name': { ru: 'Кредит наличными', kg: 'Накталай насыя', en: 'Cash Loan' },
   'feat.cash.desc': { ru: 'От 5 000 до 12 000 000 сом на любые цели. Решение за 5 дней.', kg: 'Каалаган максатка 5 000ден 12 000 000 сомго чейин. Чечим 5 күндө.', en: 'From 5,000 to 12,000,000 KGS for any purpose. Decision in 5 days.' },
   'feat.cash.cta': { ru: 'Рассчитать', kg: 'Эсептөө', en: 'Calculate' },

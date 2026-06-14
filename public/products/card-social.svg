@@ -1,0 +1,20 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="csl-front" x1="34" y1="78" x2="184" y2="174" gradientUnits="userSpaceOnUse"><stop stop-color="#5B8DEF"/><stop offset="1" stop-color="#2940A8"/></linearGradient>
+    <linearGradient id="csl-back" x1="92" y1="46" x2="242" y2="142" gradientUnits="userSpaceOnUse"><stop stop-color="#9DBBF7"/><stop offset="1" stop-color="#5B8DEF"/></linearGradient>
+    <linearGradient id="csl-chip" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE08A"/><stop offset="1" stop-color="#E0A93B"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="180" rx="96" ry="15" fill="#000" opacity="0.10"/>
+  <g transform="rotate(-9 167 95)">
+    <rect x="92" y="46" width="150" height="96" rx="16" fill="url(#csl-back)"/>
+    <rect x="92" y="46" width="150" height="30" rx="16" fill="#fff" opacity="0.16"/>
+  </g>
+  <g transform="rotate(7 110 120)">
+    <rect x="34" y="78" width="150" height="96" rx="16" fill="url(#csl-front)"/>
+    <rect x="34" y="78" width="150" height="30" rx="16" fill="#fff" opacity="0.08"/>
+    <rect x="50" y="104" width="22" height="17" rx="4" fill="url(#csl-chip)"/>
+    <path d="M78 104a10 10 0 0 1 0 17" stroke="#fff" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <text x="50" y="150" fill="#fff" opacity="0.7" font-family="monospace" font-size="11" letter-spacing="2">•••• 3025</text>
+    <text x="166" y="98" text-anchor="end" fill="#fff" font-family="Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1.5">СОЦ</text>
+  </g>
+</svg>

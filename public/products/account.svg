@@ -1,0 +1,24 @@
+<svg width="260" height="200" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ac-doc" x1="80" y1="50" x2="180" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#F4F6F9"/><stop offset="1" stop-color="#D5DAE2"/></linearGradient>
+    <linearGradient id="ac-check" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#34C77B"/><stop offset="1" stop-color="#0E9F58"/></linearGradient>
+    <linearGradient id="ac-pen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFC75A"/><stop offset="1" stop-color="#F39200"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="182" rx="90" ry="14" fill="#000" opacity="0.08"/>
+  <!-- document -->
+  <rect x="78" y="50" width="92" height="118" rx="12" fill="url(#ac-doc)"/>
+  <rect x="78" y="50" width="92" height="22" rx="12" fill="#fff" opacity="0.6"/>
+  <g stroke="#9AA4B4" stroke-width="5" stroke-linecap="round">
+    <line x1="94" y1="84" x2="154" y2="84"/>
+    <line x1="94" y1="100" x2="154" y2="100"/>
+    <line x1="94" y1="116" x2="132" y2="116"/>
+  </g>
+  <!-- check badge -->
+  <circle cx="158" cy="146" r="24" fill="url(#ac-check)"/>
+  <path d="M147 146l7 7 12-13" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- pen -->
+  <g transform="rotate(38 196 92)">
+    <rect x="188" y="40" width="14" height="70" rx="6" fill="url(#ac-pen)"/>
+    <path d="M188 110 l7 14 l7 -14 z" fill="#3C4759"/>
+  </g>
+</svg>
